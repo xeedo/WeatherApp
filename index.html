@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="assets/weather-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body onload="getLocation()">
     <div class="card">
       <h1>Weather</h1>
-      <h2>Location</h2>
+      <h2 id="location">Location</h2>
 
       <div class="basic-info">
         <div id="icon"><i class="wi wi-day-sunny"></i></div>
