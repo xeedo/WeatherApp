@@ -37,6 +37,15 @@
   font-size: 4em;
 }
 
+#icon {
+  font-size: 1em;
+}
+
+#icon,img {
+  height: 90px;
+  width: 90px;
+}
+
 .more-info {
   overflow-x: scroll;
   padding: 16px;
@@ -57,6 +66,6 @@
 }
 
 .more-info p {
-  display: inline;
-  margin: 16px;
+  display: inline-block;
+  margin: 8px;
 }
