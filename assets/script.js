@@ -1,5 +1,5 @@
 for (var i = 0; i < 5; i++) {
-  $(".more-info").append("<p>Test</p>");
+  $(".more-info").append("<div class=\"more-info-par\"></div>");
 }
 
 function getLocation() {
@@ -19,8 +19,8 @@ function getWeather(pos) {
     + "&units=metric"
     + apiKey
     , function(data) {
-        $("#location").html(data.name);
-        $("#temp").html(data.main.temp + "&degC");
+        $("#location").append(" " + data.name);
+        $("#temp").append("<span> " + data.main.temp + "&degC </span>");
         $("#icon,img").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
     });
 
@@ -32,12 +32,15 @@ function getWeather(pos) {
     + apiKey
     , function(data) {
 
-      var forecasts = document.getElementsByTagName("P");
+      var forecasts = document.getElementsByClassName("more-info-par");
 
       for (var i = 0; i < forecasts.length; i++) {
-        txtString = data.list[i].dt_txt.split(" ")[1].split(":")[0] + ":00";
-        txtString += "<br>";
-        txtString += data.list[i].main.temp + "&degC";
+        var temp_ico = "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png";
+
+        txtString = "<p>" + data.list[i].dt_txt.split(" ")[1].split(":")[0] + ":00</p>";
+        txtString += " ";
+        txtString += "<img src=\"" + temp_ico + "\" alt=\"weather image\">";
+        txtString += "<p>" + data.list[i].main.temp + "&degC</p>";
         forecasts[i].innerHTML = txtString;
       }
     });

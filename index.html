@@ -5,16 +5,19 @@
     <title>Weather App</title>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="stylesheet" type="text/css" href="assets/weather-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body onload="getLocation()">
     <div class="card">
       <h1>Weather</h1>
-      <h2 id="location">Location</h2>
+      <h2 class="back_1" id="location"><i class="fa fa-map-marker"></i></h2>
 
-      <div class="basic-info">
+      <div class="back_1 basic-info">
         <div id="icon"><img src="" alt="weather image"></div>
-        <div id="temp">-&degC</div>
+        <div id="temp">
+          <i class="fa fa-thermometer-three-quarters fa-fw" style="font-size:1em"></i>
+        </div>
       </div>
 
       <!--- Data given by script --->
